@@ -75,9 +75,9 @@
 		{
 			"id": "pointer:pointer",
 			"typeName": "pointer",
-			"x": 1528.2297114932423,
-			"y": -98.77888449715782,
-			"lastActivityTimestamp": 1753126594281,
+			"x": 229.30352483895007,
+			"y": 417.49836504363196,
+			"lastActivityTimestamp": 1753167021658,
 			"meta": {}
 		},
 		{
@@ -320,9 +320,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -89.9843279718876,
-			"y": -4,
-			"z": 1,
+			"x": 13.370442020130412,
+			"y": 58.183461977710294,
+			"z": 0.8718943624139142,
 			"meta": {},
 			"id": "camera:page:IxrnqADdwiGJKKnCrq1Ju",
 			"typeName": "camera"
@@ -796,8 +796,8 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -86.10002136230469,
-			"y": -60.69999885559082,
+			"x": -125.10002136230469,
+			"y": -9.099990844726562,
 			"z": 1,
 			"meta": {},
 			"id": "camera:page:page",
@@ -1174,9 +1174,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 22.53009643245258,
-			"y": -42.588748455618884,
-			"z": 0.9278639473800521,
+			"x": 0,
+			"y": 0,
+			"z": 1,
 			"meta": {},
 			"id": "camera:page:jPxfkIHTAWNuGLnCrZmub",
 			"typeName": "camera"
@@ -1921,9 +1921,7 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [
-				"shape:Jvh428RDxvyVgMeaU0jP7"
-			],
+			"selectedShapeIds": [],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
@@ -3733,7 +3731,21 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [],
+			"selectedShapeIds": [
+				"shape:1Fbv0m88Ug5919uOGMUrF",
+				"shape:K0CucE9ygp1-scIzJvR7q",
+				"shape:sGaBuNp9Ejrgfu1SiJl7n",
+				"shape:Khdy1exZ-lBwiVzPlwJ8e",
+				"shape:Q2LexvmqCaVk1tGWhdxub",
+				"shape:0TU2NMyhfcLCNa0ukhdp1",
+				"shape:WmtX2uSsWBll-DKXqp6eF",
+				"shape:BPVjWG4etBnvIwWLf3YuP",
+				"shape:5D13eM5MNqdII2OlJKpmH",
+				"shape:WDbkaCdmx4-d-G_DDQ0zV",
+				"shape:fuFlifxQda7CaxLlD6Dau",
+				"shape:mu2sEaOTo7SnM3CCEzX2o",
+				"shape:29b-W_mjnT8aKmKEIzfng"
+			],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
@@ -4036,11 +4048,9 @@
 			"typeName": "shape"
 		},
 		{
-			"editingShapeId": "shape:2y1LWSF_RbA_fnqw6P9FM",
+			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [
-				"shape:2y1LWSF_RbA_fnqw6P9FM"
-			],
+			"selectedShapeIds": [],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
@@ -4302,13 +4312,7 @@
 		{
 			"followingUserId": null,
 			"opacityForNextShape": 1,
-			"stylesForNextShape": {
-				"tldraw:size": "l",
-				"tldraw:geo": "ellipse",
-				"tldraw:color": "violet",
-				"tldraw:fill": "none",
-				"tldraw:dash": "draw"
-			},
+			"stylesForNextShape": {},
 			"brush": null,
 			"scribbles": [],
 			"cursor": {
@@ -4322,7 +4326,7 @@
 			"screenBounds": {
 				"x": 0,
 				"y": 0,
-				"w": 1488,
+				"w": 1318.4000244140625,
 				"h": 702.4000244140625
 			},
 			"insets": [
@@ -4340,14 +4344,14 @@
 			"isFocused": true,
 			"devicePixelRatio": 1.25,
 			"isCoarsePointer": false,
-			"isHoveringCanvas": false,
+			"isHoveringCanvas": true,
 			"openMenus": [],
 			"isChangingStyle": false,
 			"isReadonly": false,
 			"meta": {},
 			"duplicateProps": null,
 			"id": "instance:instance",
-			"currentPageId": "page:4AH1PL13rFfX7YYJIZoSu",
+			"currentPageId": "page:U2fb27OtR_-6hTBl2wEAA",
 			"typeName": "instance"
 		},
 		{
@@ -4704,9 +4708,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": -14.378421367321153,
-			"y": 31.550835850378164,
-			"z": 0.922663480361742,
+			"x": 19.703475056737645,
+			"y": 96.67838427839234,
+			"z": 0.7919455960308418,
 			"meta": {},
 			"id": "camera:page:U2fb27OtR_-6hTBl2wEAA",
 			"typeName": "camera"
@@ -4753,9 +4757,7 @@
 		{
 			"editingShapeId": null,
 			"croppingShapeId": null,
-			"selectedShapeIds": [
-				"shape:tGPtRQozvjvuHYLoXpBmD"
-			],
+			"selectedShapeIds": [],
 			"hoveredShapeId": null,
 			"erasingShapeIds": [],
 			"hintingShapeIds": [],
@@ -4938,9 +4940,9 @@
 			"typeName": "shape"
 		},
 		{
-			"x": 176.89702267473066,
-			"y": 105.47691319542744,
-			"z": 0.836066872343989,
+			"x": 0,
+			"y": 0,
+			"z": 1,
 			"meta": {},
 			"id": "camera:page:4AH1PL13rFfX7YYJIZoSu",
 			"typeName": "camera"
