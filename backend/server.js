@@ -4,7 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const User = require("./models/User");
+const User = require("../backend/models/User.js");
 
 const app = express();
 const PORT = 5500;
