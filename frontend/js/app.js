@@ -40,30 +40,49 @@ function filterColleges() {
 
 
  
-  const modeToggle = document.getElementById('modeToggle');
-  const modeIcon = document.getElementById('modeIcon');
-  const modeText = document.getElementById('modeText');
-  const navbar = document.getElementById('mainNavbar');
+  
+// frontend/js/app.js
 
-  modeToggle.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark-mode');
+// =======================
+// Function to Handle Login
+// =======================
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("loginForm");
 
-    if (isDark) {
-      document.body.classList.remove('light-mode');
-      navbar.classList.remove('navbar-light', 'bg-light');
-      navbar.classList.add('navbar-dark', 'bg-dark');
+  if (loginForm) {
+    loginForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
 
-      // Now that dark mode is ON: offer Light Mode button
-      modeIcon.src = 'https://img.icons8.com/ios-filled/24/ffffff/sun--v1.png';
-      modeText.textContent = 'Light Mode';
-    } else {
-      document.body.classList.add('light-mode');
-      document.body.classList.remove('dark-mode');
-      navbar.classList.remove('navbar-dark', 'bg-dark');
-      navbar.classList.add('navbar-light', 'bg-light');
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
 
-      // Now that light mode is ON: offer Dark Mode button
-      modeIcon.src = 'https://img.icons8.com/ios-filled/24/000000/moon-symbol.png';
-      modeText.textContent = 'Dark Mode';
-    }
-  });
+      if (!username || !password) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      try {
+        const response = await fetch("http://localhost:5500/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert("Login saved successfully");
+          loginForm.reset();
+          // Redirect or show next section
+        } else {
+          alert(result.error || "Login failed");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Server Error. Try again later.");
+      }
+    });
+  }
+});
