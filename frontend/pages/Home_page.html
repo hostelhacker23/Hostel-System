@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel System</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+ <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 sticky-top">
+  <div class="container-fluid">
+
+    <!-- Toggler button for small screens -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible nav links -->
+     <img class="Logo" src="./images/logo_.jpg" alt="">
+<div class="collapse navbar-collapse" id="navbarNavDropdown">
+  <ul class="navbar-nav d-flex justify-content-evenly w-100 mb-2 mb-lg-0">
+    <li class="nav-item">
+      <a class="nav-link fw-bold text-warning" href="./pages/Home_page.html">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fw-bold text-warning" href="./pages/Student_Dashboard.html">Student Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fw-bold text-warning" href="./pages/about.html">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link fw-bold text-warning" href="./pages/login_page.html">Login</a>
+    </li>
+  </ul>
+</div>
+
+
+
+    </div>
+  </div>
+</nav>
+
+  
+<!-- Sign In Modal HTML -->
+<div class="modal fade" id="signInModal" tabindex="-1" aria-labelledby="signInModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Get access to more learning features</p>
+        <div class="d-flex justify-content-around mb-3">
+          <button class="btn btn-outline-danger">
+            <img src="https://img.icons8.com/color/24/000000/google-logo.png" alt="Google"/>
+          </button>
+          <button class="btn btn-outline-primary">
+            <img src="https://img.icons8.com/color/24/000000/facebook-new.png" alt="Facebook"/>
+          </button>
+          <button class="btn btn-outline-dark">
+            <img src="https://img.icons8.com/ios-glyphs/24/000000/github.png" alt="GitHub"/>
+          </button>
+          <button class="btn btn-outline-info">
+            <img src="https://img.icons8.com/color/24/000000/linkedin.png" alt="LinkedIn"/>
+          </button>
+        </div>
+        <div class="text-center mb-3">or</div>
+        <form>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Email">
+          </div>
+          <div class="mb-3">
+            <input type="password" class="form-control" placeholder="Password">
+          </div>
+          <div class="mb-3 text-end">
+            <a href="#">Forgot your password?</a>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Main content -->
+    <main class="container my-5">
+  <!-- Search -->
+  <section class="text-center mb-5">
+    <h2 class="h3 mb-3">Find Your College</h2>
+    <input type="text" id="searchBox" class="form-control mx-auto mb-3" style="max-width: 300px;" placeholder="Enter college name..." oninput="filterColleges()" />
+    <ul id="suggestions"></ul>
+  </section>
+
+  <!-- Left & Right -->
+  <div class="row align-items-center gy-4">
+    <div class="col-md-6">
+      <h1 class="h2 mb-3 text-primary">Smart Hostel Management System</h1>
+      <p>This project is designed for college minor submission. It manages student allocation, room status, and admin control in a user-friendly interface.</p>
+    </div>
+    <div class="col-md-6 text-center">
+      <img src="./images/home_page_image.jpg" alt="Hostel Illustration..." class="img-fluid">
+    </div>
+  </div>
+</main>
+
+
+
+    <!-- Footer -->
+<footer class="bg-dark text-white text-center py-4">
+  <div class="container d-flex flex-column align-items-center gap-3">
+    <p class="mb-2">© 2025 Smart Hostel. All rights reserved.</p>
+    <div class="d-flex gap-3 flex-wrap justify-content-center">
+      <a href="./pages/login_page.html" class="btn btn-primary fw-bold">Login</a>
+      <a href="./pages/register.html" class="btn btn-primary fw-bold">Register Now</a>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="./js/app.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

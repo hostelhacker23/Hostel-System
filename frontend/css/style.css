@@ -29,6 +29,10 @@ body {
     color: yellow;
 }
 
+.Logo {
+  height: 50px;
+}
+
 /* Main Content */
 .main-section {
     display: flex;
