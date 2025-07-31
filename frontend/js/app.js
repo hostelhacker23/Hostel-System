@@ -45,7 +45,7 @@ function createSignInModal() {
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header flex-column align-items-center text-center">
-          <img src="./images/logo_signin.png" alt="Sign In Logo" class="mb-2" style="height: 50px;">
+          <img src="../images/sign_in.png" alt="Sign In Logo" class="mb-2" style="height: 50px;">
           <h5 class="modal-title w-100" id="signInModalLabel">Sign In</h5>
           <button type="button" class="btn-close position-absolute end-0 me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
