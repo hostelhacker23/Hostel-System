@@ -1,50 +1,28 @@
-// backend/server.js
-
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const bodyParser = require("body-parser");
-const User = require("../backend/models/User.js");
+const path = require("path");
 
 const app = express();
-const PORT = 5500;
+const PORT = 3000;
 
-// Middleware
+// Middlewares
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json()); // Replaces body-parser
 
-// MongoDB connection
-mongoose.connect("mongodb://127.0.0.1:27017/hostelDB", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+// Connect to MongoDB
+mongoose.connect("mongodb://127.0.0.1:27017/hostel", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("✅ MongoDB connected"))
+.catch((err) => console.error("❌ MongoDB connection error:", err));
 
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
-db.once("open", () => {
-    console.log("Connected to MongoDB (hostelDB)");
-});
+// Load routes
+const studentRoutes = require(path.join(__dirname, "routes", "student_register.js"));
+app.use("/api/student", studentRoutes);
 
-// Root route
-app.get("/", (req, res) => {
-    res.send("🏠 Hostel Management System Backend is running");
-});
-
-// Login route
-app.post("/login", async (req, res) => {
-    const { username, password } = req.body;
-    try {
-        const newUser = new User({ username, password });
-        await newUser.save();
-        res.status(200).json({ message: "Login saved successfully" });
-    } catch (error) {
-        res.status(500).json({ error: "Failed to save login" });
-    }
-});
-
-// Start the server
+// Start server
 app.listen(PORT, () => {
-   console.log(`Server is running at http://localhost:${5500}`);
-
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
