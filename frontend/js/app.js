@@ -1,14 +1,15 @@
+//    College Name :-
 const collegeList = [
-  "B.K.N.S.G.P GOPALGANJ",
-  "ARYABHATT POLYTECHNIC, GAYA",
-  "BUDHA POLY INSTITUTE, GAYA",
-  "G.P.MOTIHARI",
-  "G.P.BHOJPUR",
-  "G.P.MUNGER",
-  "G.P.SIWAN",
-  "G.P.GOPALGANJ",
-  "G.P.PATNA-7",
-  "G.W.P.MUZAFFARPUR"
+  { name: "B.K.N.S.G.P GOPALGANJ", page: "bk_nsgp_gopalganj.html" },
+  { name: "ARYABHATT POLYTECHNIC, GAYA", page: "aryabhatt_polytechnic_gaya.html" },
+  { name: "BUDHA POLY INSTITUTE, GAYA", page: "budha_poly_institute_gaya.html" },
+  { name: "G.P.MOTIHARI", page: "gp_motihari.html" },
+  { name: "G.P.BHOJPUR", page: "gp_bhojpur.html" },
+  { name: "G.P.MUNGER", page: "gp_munger.html" },
+  { name: "G.P.SIWAN", page: "gp_siwan.html" },
+  { name: "G.P.GOPALGANJ", page: "gp_gopalganj.html" },
+  { name: "G.P.PATNA-7", page: "gp_patna7.html" },
+  { name: "G.W.P.MUZAFFARPUR", page: "gwp_muzaffarpur.html" }
 ];
 
 function filterColleges() {
@@ -19,7 +20,7 @@ function filterColleges() {
   if (input === "") return;
 
   const filtered = collegeList.filter(college =>
-    college.toLowerCase().includes(input)
+    college.name.toLowerCase().includes(input)
   );
 
   if (filtered.length === 0) {
@@ -29,14 +30,22 @@ function filterColleges() {
 
   filtered.forEach(college => {
     const li = document.createElement("li");
-    li.textContent = college;
-    li.onclick = () => {
-      document.getElementById("searchBox").value = college;
+
+    const a = document.createElement("a");
+    a.href = college.page;
+    a.textContent = college.name;
+    a.style.textDecoration = "none";
+    a.style.color = "inherit";
+    a.onclick = () => {
+      document.getElementById("searchBox").value = college.name;
       suggestions.innerHTML = "";
     };
+
+    li.appendChild(a);
     suggestions.appendChild(li);
   });
 }
+
 
 //  sign_up code 
 function createSignInModal() {
