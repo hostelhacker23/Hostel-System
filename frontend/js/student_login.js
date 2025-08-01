@@ -1,20 +1,15 @@
 function login(event) {
-  event.preventDefault(); // 🛑 Stop form from refreshing the page
+  event.preventDefault();
 
-  const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  const validUsers = [
-    { user: "student1", pass: "123" },
-    { user: "student2", pass: "abc" }
-  ];
-
-  const match = validUsers.find(u => u.user === username && u.pass === password);
-
-  if (match) {
-    alert("You are Logged in Successfully!");
+  // Dummy login check — replace this with real backend later
+  if (username === "student" && password === "1234") {
+    // Store user session (optional)
+    localStorage.setItem("loggedInStudent", username);
     window.location.href = "../pages/Student_Dashboard.html";
   } else {
-    alert("Invalid username or password!");
+    alert("Invalid credentials. Try 'student' and '1234'.");
   }
 }

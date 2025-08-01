@@ -4,40 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Student Dashboard</title>
-  <link rel="stylesheet" href="../css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
-<body>
-  <nav class="navbar navbar-dark bg-primary p-3">
+<body style="background-color: #f3f9ff; font-family: 'Segoe UI', sans-serif;">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg px-4 sticky-top" style="background-color: #174374;">
     <div class="container-fluid">
-      <span class="navbar-brand">Welcome, <span id="studentName"></span></span>
-      <button class="btn btn-warning btn-sm" onclick="logout()">Logout</button>
+      <a class="navbar-brand text-warning fw-bold" href="#">
+        <img src="../images/logo.jpg" alt="" height="30" /> Hostel System
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./login_page.html" onclick="logout()">Logout</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <div class="container my-5">
-    <h2 class="text-center">📚 Student Dashboard</h2>
-    <p class="text-center">Here is your personalized hostel information.</p>
+  <!-- Welcome -->
+  <div class="container text-center mt-5">
+    <h2>Welcome to Your Dashboard, <span id="studentName"></span>!</h2>
+    <p class="text-muted">Explore your hostel info, submit complaints, and more.</p>
   </div>
 
-  <footer class="text-center bg-dark text-light py-3">
-    © 2025 Smart Hostel | Dashboard
-  </footer>
+  <!-- Dashboard Cards -->
+  <div class="container mt-4">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded text-center" style="background: #ffd66b;">
+          <h5>Your Profile</h5>
+          <p>Personal info and hostel details</p>
+          <a href="#" class="btn btn-dark btn-sm">View</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded text-center" style="background: #fba937;">
+          <h5>Submit Complaint</h5>
+          <p>Send complaint to admin</p>
+          <a href="../pages/Student_complaint.html" class="btn btn-dark btn-sm">Submit</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 shadow rounded text-center" style="background: #fddf91;">
+          <h5>Notices</h5>
+          <p>Check hostel announcements</p>
+          <a href="#" class="btn btn-dark btn-sm">Read</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
-    // Check login
-    if (!localStorage.getItem("studentLoggedIn")) {
-      window.location.href = "login_page.html"; // redirect if not logged in
-      console.log("Redirecting to student login page...");
-
-    } else {
-      document.getElementById("studentName").textContent = localStorage.getItem("studentUser");
-    }
+    const name = localStorage.getItem("loggedInStudent");
+    document.getElementById("studentName").textContent = name ?? "Student";
 
     function logout() {
-      localStorage.clear();
-      window.location.href = "Student_Dashboard.html";
+      localStorage.removeItem("loggedInStudent");
+      window.location.href = "../pages/login_page.html";
     }
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/student_login.js"></script>
 </body>
 </html>
