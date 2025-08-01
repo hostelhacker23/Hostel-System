@@ -1,16 +1,16 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const path = require("path");
 
 const app = express();
-const PORT = 3000;
-
-// Middlewares
 app.use(cors());
-app.use(express.json()); // Replaces body-parser
+app.use(bodyParser.json());
 
-// Connect to MongoDB
+// Serve static frontend files (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname, "public")));
+
 mongoose.connect("mongodb://127.0.0.1:27017/hostel", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -18,11 +18,15 @@ mongoose.connect("mongodb://127.0.0.1:27017/hostel", {
 .then(() => console.log("✅ MongoDB connected"))
 .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-// Load routes
-const studentRoutes = require(path.join(__dirname, "routes", "student_register.js"));
-app.use("/api/student", studentRoutes);
+// API route for student
+app.use("/api/student", require("./routes/student_register"));
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+// Default route: serve index.html
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
+
+const PORT = 3000;
+app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
+
+
